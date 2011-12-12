@@ -1,0 +1,33 @@
+<%= form_tag t_lex_path, :id => "form", :multipart => true do %>
+<ol>
+	<li>
+		<%= label_tag :file , "File" %>
+		<%= file_field_tag :file %>
+	</li>
+	<li>
+		<%= submit_tag "Complie" %>
+	</li>
+</ol>
+<%end%>
+
+<%if @tlex%>
+<div>Tokens</div>
+<table>
+	<thead>
+		<tr>
+			<th>Valor</th>
+			<th>Tipo Indentificador</th>
+			<th>Linha</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%@tlex.get_tokens.each do |token| %>
+		<tr>
+			<td><%= token.value%></td>
+			<%= raw (token.type == SymbolTable::ERROR)? "<td style='background-color: red;'>#{token.type}</td>" : "<td>#{token.type}</td>" %>
+			<td><%= token.line%></td>
+		</tr>
+		<%end%>
+	</tbody>
+</table>
+<%end%>
