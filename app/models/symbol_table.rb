@@ -43,7 +43,7 @@ class SymbolTable
     "]" => "]"
   }
   
-  IDENTIFY = "ID"
+  IDENTIFIER = "ID"
   
   STRING = "STRING"
   

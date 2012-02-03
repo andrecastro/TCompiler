@@ -1,4 +1,4 @@
-class Token < ActiveRecord::Base
+class Token 
   
   attr_accessor :value
   attr_accessor :type

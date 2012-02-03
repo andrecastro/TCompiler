@@ -1,25 +1,41 @@
-int x(){
-	int num;
+int main(){
+	int num = a;
+	num = 10;	
 
-	num = 10;
 
 	--num;
 	++num;
 
-	char x;
-
 	while(num < 11){
+		char x;
+		char num;
 		if( x == 10 ){
-			num = 20;		
+			char num;		
+			num = (20*8 + 5)*num;		
 		}else {
-			num = 30;
+			x = 'b';
+			num = ((30 + 9)*(5+8));
 		}
-		
+
+		printf("lalalla");
+		printf(num);
+		printf('a');
+		printf(10);
+		printf(10.1);
+
 		while( num != 50){
-			if( 'a' < b){
+			char b = 'w';
+			char num;
+			if( b < x){
+				double r;
 				r = 200.9;
 			}
+		
 		}
 	}
-}
 
+	while(num > 20){
+		
+	}
+
+}

@@ -6,6 +6,7 @@ class Automata
   attr_accessor :alphabet # alphabet of altomata
   attr_accessor :states # all states of altomata
   
+    
   def initialize
     @table = {}
     @final_states = Set.new

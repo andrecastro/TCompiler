@@ -1,8 +1,10 @@
 TCompiler::Application.routes.draw do
   
-  root :to => "t_lex#new"
+  root :to => "t_compiler#index"
   resource :t_lex, :controller => "t_lex"
   
+  match 'compile' => 't_compiler#index' , :as => 't_compiler' ,:via => :get
+  match 't_compiler/compile' => 't_compiler#compile' , :as => "compile" , :via => :post
   
   
   

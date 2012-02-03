@@ -124,7 +124,7 @@ class Tokenizer
     return tokens << Token.new(lexeme,SymbolTable::DOUBLE,line) if SymbolTable.double?(lexeme)
     return tokens << Token.new(lexeme,SymbolTable::CHARACTER,line) if SymbolTable.char?(lexeme)
     return tokens << Token.new(lexeme,SymbolTable::STRING,line) if SymbolTable.string?(lexeme)
-    return tokens << Token.new(lexeme,SymbolTable::IDENTIFY,line) if SymbolTable.identify?(lexeme)
+    return tokens << Token.new(lexeme,SymbolTable::IDENTIFIER,line) if SymbolTable.identify?(lexeme)
     return comments << Token.new(lexeme,SymbolTable::COMMENT,line) if SymbolTable.simple_comment?(lexeme)
     return comments << Token.new(lexeme,SymbolTable::COMMENT,line) if SymbolTable.block_comment?(lexeme)
     return tokens << Token.new(lexeme,SymbolTable::ERROR,line)

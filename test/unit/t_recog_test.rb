@@ -13,7 +13,10 @@ class TRecogTest < ActiveSupport::TestCase
     
     t_rec = TRecog.new(s_table,t_lex)
     
-    puts t_rec.recognize
+    response = t_rec.recognize
+    
+    puts response[:status] && t_rec.semantic_errors.empty?
+    puts "line #{response[:line]}"
   end
 
 end

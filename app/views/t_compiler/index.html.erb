@@ -1,0 +1,34 @@
+<%= form_tag compile_path, :id => "form", :multipart => true do %>
+		<%= label_tag :file , "File" %>
+		<%= file_field_tag :file %>
+		<%= submit_tag "Compile" %>
+		<div id="passed">
+		</div>
+<%end%>
+
+<%if flash[:semantic_errors]%>
+	<% flash[:semantic_errors].each do |error| %>
+		<%=error%>
+		<br/>
+	<%end%>
+<%end%>
+
+<% if flash[:line]%>
+	<%=flash[:line]%>
+	<br/>
+<%end%>
+
+<script>
+	$("#passed").removeClass("accept");
+	$("#passed").removeClass("decline");
+	$("#passed").empty();
+	<%if flash[:compiled] == true %>
+		$("#passed").addClass('accept');
+		$("#passed").text("Compilado com sucesso!");
+	<%else%>
+		<%if flash[:compiled] != nil%>
+			$("#passed").addClass('decline');
+			$("#passed").text("Erro de compilação");
+		<%end%>
+	<%end%>
+</script>
